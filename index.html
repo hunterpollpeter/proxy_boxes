@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      window.addEventListener("message", receiveMessage, false);
+    });
+    function receiveMessage(event) {
+      console.log(event.data);
+    }
+  </script>
+  <style>
+    html {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .responsive {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div style="position: absolute; top: 0;right: 50%; bottom: 0; left: 0;">
+    <iframe class="responsive" src="/proxy.php?geckoboard.com" onloadstart='alert("test")' frameborder="0" name="geckoboard"></iframe>
+  </div>
+  <div style="position: absolute; top: 0;right: 0; bottom: 0; left: 50%;">
+    <iframe class="responsive" src="/proxy.php?youtube.com" frameborder="0" name="google"></iframe>
+  </div>
+</body>
+</html>
